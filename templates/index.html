@@ -16,13 +16,14 @@ height: 100%;
 width: 100%;
   }
   .child{
-flex: 1;
-margin: 5%;
+    flex: 1;  
+    margin: 5%;
   }
 
   body{
-    background-image: url("../assets/bg.jpg");
-    background-repeat: no-repeat
+    /* background-image: url("../assets/bg.jpg"); */
+    /* background-repeat: repeat; */
+    color: #8096a1;
   }
   
 </style>
@@ -43,48 +44,99 @@ margin: 5%;
   </div>
   <div class="parent">
     <div class="child">
-    <form class="row g-3">
+    <form method="post" action="/" class="row g-3">
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Email</label>
-        <input type="email" class="form-control" id="inputEmail4">
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4">
-      </div>
-      <div class="col-12">
-        <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <div class="col-12">
-        <label for="inputAddress2" class="form-label">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="name" name="name">
       </div>
       <div class="col-md-6">
-        <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity">
+        <label for="date" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="date" name="date">
       </div>
-      <div class="col-md-4">
-        <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
-          <option selected>Choose...</option>
-          <option>...</option>
+
+      <div class="col-md-6">
+        <label for="currloc" class="form-label">Current location</label>
+        <input type="text" class="form-control" id="currloc" name="currloc">
+      </div>
+      <div class="col-md-6">
+        <label for="contact" class="form-label">Contact Number</label>
+        <input type="input" class="form-control" id="contact" name="contact">
+      </div>
+
+      <div class="col-md-6">
+        <label for="taront" class="form-label">Country you are applying to:</label>
+        <input type="input" class="form-control" id="tarcont" name="tarcont">
+      </div>
+
+      <div class="col-md-6">
+        <label for="college" class="form-label">College you are applying to:</label>
+        <input type="input" class="form-control" id="college" name="college">
+      </div>
+
+      <div class="col-md-6">
+        <label for="course" class="form-label">Course you are applying to:</label>
+        <input type="input" class="form-control" id="course" name="course">
+      </div>      
+
+      <div class="col-md-6">
+        <label for="ielts" class="form-label">IELTS Score:</label>
+        <input type="input" class="form-control" id="ielts" name="ielts">
+      </div>      
+
+
+      <div class="col-md-6">
+        <label for="visa" class="form-label">Any past visa refusals?:</label><br>
+        <select class="form-select aria-label" name="visa" id="visa">
+          <option value="yes">Yes</option>
+          <option value="n  o">No</option>
         </select>
+      </div>      
+      
+      <div class="col-12">
+        <label for="academics" class="form-label">Share academics percentages for 10th ,12th ,graduation with the year you passed and stream choosen:        </label>
+        <input type="text" class="form-control" id="academics" name="academics" placeholder="eg: 68% in 10th, 59% in 12th, Btech in CSE 2020 Batch">
       </div>
-      <div class="col-md-2">
-        <label for="inputZip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
+
+      <div class="col-12">
+        <label for="hobbiesexp" class="form-label">Let us know your experience ? You can also add here your hobbies , extra curricular activities in School or Colleges:        </label>
+        <input type="text" class="form-control" id="hobbiesexp" name="hobbiesexp" placeholder="eg: 2 year experience in sales">
+      </div>
+
+      <div class="col-12">
+        <label for="parinfo" class="form-label">Share information related to your parents and siblings, let us know their profession and education:        </label>
+        <input type="text" class="form-control" id="parinfo" name="parinfo" placeholder="eg: Dad is salaryman, Mom is housewife">
+      </div>
+
+      <div class="col-12">
+        <label for="addinfo" class="form-label">Anything in specific ,you wish to inform us which relates to your course or academics or else of your work experience:    </label>
+        <input type="text" class="form-control" id="addinfo" name="addinfo" placeholder="eg: 3 year consecutive state kabbaddi champion">
+      </div>
+
+      <div class="col-12">
+        <label for="gap" class="form-label">Do you have a GAP year ,let us know in detail on this ,if you don't have a gap year ,just mention it as Not Applicable:    </label>
+        <input type="text" class="form-control" id="gap" name="gap" placeholder="No/Yes(Explain)">
+      </div>
+
+      <div class="col-12">
+        <label for="free" class="form-label">Share GIC paid and Fees amount deposited:</label>
+        <input type="text" class="form-control" id="fee" name="fee" placeholder="Paid full tution with help of father">
+      </div>
+      
+      <div class="col-md-6">
+        <label for="sopfee" class="form-label">SOP fee paid?:</label><br>
+        <select class="form-select aria-label" name="sopfee" id="sopfee">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div> 
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="confirmation">
+          Kindly confirm that you had shared all genuine information and you agree to indemnify and hold Turn Around School Consultants and its affiliates, officers, agents, co-branders or other partners and employees, harmless from any claim or demand, including reasonable attorneys’ fees made by any third party due to the content you submit or the document we share as a final product ,towards your use of this services , your violation of the Terms of Use, or your violation of any rights of another user.      </label>
       </div>
       <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
-        </div>
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
     </div>

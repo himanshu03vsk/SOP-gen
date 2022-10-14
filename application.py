@@ -30,8 +30,28 @@ def after_request(response):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    """Show portfolio of stocks"""
-    return render_template("index.html")
+    if request.method=="POST":
+        argdict = {}
+        argdict["name"] = request.form.get('name')
+        argdict["dob"]  = request.form.get('dob')
+        argdict["loc"] = request.form.get('currloc')
+        argdict["contact"] = request.form.get('contact')
+        argdict["tarcont"] = request.form.get('tarcont')
+        argdict["college"]= request.form.get('college')
+        argdict["course"] = request.form.get('course')
+        argdict["ielts"] = request.form.get('ielts')
+        argdict["visa"] =request.form.get('visa')
+        argdict["academic"] = request.form.get('academics')
+        argdict["hobbiesexp"] = request.form.get('hobbiesexp')
+        argdict["parinfo"] = request.form.get('parinfo')
+        argdict["addinfo"] = request.form.get('addinfo')
+        argdict["gap"] = request.form.get('gap')
+        argdict["fee"] = request.form.get('fee')
+        argdict["sopfee"] = request.form.get('sopfee')
+        
+        return render_template("index.html",argdict)
+    else:
+        return render_template("index.html")
 
 @app.route("/submit", methods=["GET","POST"])
 def submit():
@@ -76,6 +96,3 @@ if __name__ == '__main__':
     app.run()
 
 
-
-
-# ImmutableMultiDict([('year', '2019'), ('price', '14.22'), ('price_in_lakh', '49000'), ('petrol', 'on'), ('switch', 'on')])
