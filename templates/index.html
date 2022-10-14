@@ -24,6 +24,7 @@ width: 100%;
     /* background-image: url("../assets/bg.jpg"); */
     /* background-repeat: repeat; */
     color: #8096a1;
+    white-space: pre-line;
   }
   
 </style>
@@ -40,7 +41,7 @@ width: 100%;
 </head>
 <body>
   <div class="title">
-    <h2  >SOP generator using GPT-3</h2>
+    <h2  >SOP generator</h2>
   </div>
   <div class="parent">
     <div class="child">
@@ -84,13 +85,18 @@ width: 100%;
       </div>      
 
 
-      <div class="col-md-6">
+      <!-- <div class="col-md-6">
         <label for="visa" class="form-label">Any past visa refusals?:</label><br>
         <select class="form-select aria-label" name="visa" id="visa">
           <option value="yes">Yes</option>
           <option value="n  o">No</option>
         </select>
-      </div>      
+      </div>     -->
+      
+      <div class="col-12">
+        <label for="academics" class="form-label">Any past visa refusals? If yes please let us know in detail:</label>
+        <input type="text" class="form-control" id="visa" name="visa" placeholder="eg: 68% in 10th, 59% in 12th, Btech in CSE 2020 Batch">
+      </div>
       
       <div class="col-12">
         <label for="academics" class="form-label">Share academics percentages for 10th ,12th ,graduation with the year you passed and stream choosen:        </label>
@@ -141,8 +147,14 @@ width: 100%;
     </form>
     </div>
     <div class="child">
-      
-        <input disabled class="textbox" type="text" class="form-control" id="inputCity">
+      <!-- <input type="text" readonly> -->
+      {% if resFlag %}
+            {{response}}
+      {% else %}
+            Your SOP will appear here
+          {% endif %}</>
+        
+        <!-- <input disabled class="textbox" type="text" class="form-control" id="inputCity"> -->
     </div>
   </div>
 </body>
